@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>IMart: Student Marketplace & Services</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#F8F9FA;--sf:#fff;--tx:#10213D;--mu:#5B6B85;--ln:#DCE5F2;--bl:#0056D2;--sk:#E6F0FA;--on:#fff;--er:#C62828;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0C1423;--sf:#142038;--tx:#E8EEF8;--mu:#93A4C0;--ln:#25375A;--bl:#5B9BFF;--sk:#16294A;--on:#07121F;--er:#FF8A80;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0C1423;--sf:#142038;--tx:#E8EEF8;--mu:#93A4C0;--ln:#25375A;--bl:#5B9BFF;--sk:#16294A;--on:#07121F;--er:#FF8A80;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.45 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sf);z-index:10}
+button,input,select,textarea{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--bl);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--sf);border-bottom:1px solid var(--ln);display:flex;gap:12px;align-items:center;padding:10px 14px}
+.lg{font-weight:800;font-size:21px;color:var(--bl);display:flex;align-items:center;gap:6px}
+.lg i{background:var(--bl);color:var(--on);border-radius:8px;width:28px;height:28px;display:grid;place-items:center;font-style:normal}
+main{max-width:980px;margin:auto;padding:14px 14px 100px}h1{font-size:24px;margin:6px 0 12px}h2{font-size:18px;margin:6px 0}h3{margin:14px 0 6px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--sf)}
+.b{background:var(--bl);color:var(--on);border:0;border-radius:10px;padding:10px 16px;font-weight:600;cursor:pointer}
+.g{background:var(--sk);color:var(--bl)}.d{background:transparent;color:var(--er);border:1px solid var(--ln)}.w{background:var(--on);color:var(--bl)}
+.hero{background:var(--bl);color:var(--on);border-radius:16px;padding:22px 18px;margin-bottom:14px}.hero h1{font-size:28px;margin:0 0 4px}.hero p{margin:0 0 14px;opacity:.9}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}.sc{overflow-x:auto;flex-wrap:nowrap}.sel{width:auto;margin-left:auto;padding:7px 10px}
+.ch{padding:7px 14px;border-radius:99px;border:1px solid var(--ln);background:var(--sf);cursor:pointer;white-space:nowrap}.ch.on{background:var(--bl);color:var(--on);border-color:var(--bl)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.cd,.cat{background:var(--sf);border:1px solid var(--ln);border-radius:12px;overflow:hidden;cursor:pointer;text-align:left;padding:0}
+.tl{background:var(--sk);font-size:46px;display:grid;place-items:center;aspect-ratio:4/3;position:relative}.tl.big{font-size:72px;border-radius:12px}.tl.sm{font-size:26px;width:46px;aspect-ratio:1;border-radius:10px}
+.bd{position:absolute;top:8px;left:8px;background:var(--bl);color:var(--on);font-size:11px;border-radius:99px;padding:2px 8px}
+.cb{padding:10px}.cb h3{font-size:14px;margin:0 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.pr{color:var(--bl);font-weight:800;font-size:18px}.pr small{font-weight:400;color:var(--mu);font-size:12px}.mt{display:flex;justify-content:space-between;font-size:12px;color:var(--mu);margin-top:4px}
+.cat{padding:16px;display:grid;gap:4px;color:var(--tx)}.cat span{font-size:34px}.mu{color:var(--mu)}
+.rw{display:grid;grid-template-columns:auto 1fr auto auto;gap:12px;align-items:center;background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:10px;margin-bottom:8px;text-align:left;width:100%;cursor:default}.th{cursor:pointer;grid-template-columns:auto 1fr}
+.bx{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:14px;display:grid;gap:10px;margin:12px 0}.rw2{display:flex;justify-content:space-between;align-items:center;gap:10px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:15}
+nav button{flex:1;background:none;border:0;display:grid;justify-items:center;font-size:11px;color:var(--mu);padding:4px;position:relative;cursor:pointer}nav span{font-size:20px}nav .on{color:var(--bl);font-weight:600}
+#cc:not(:empty){position:absolute;top:0;left:56%;background:var(--bl);color:var(--on);border-radius:99px;font-size:10px;padding:0 6px}
+.md{position:fixed;inset:0;background:rgba(10,20,40,.55);display:flex;align-items:flex-end;justify-content:center;z-index:50}
+.sh{background:var(--sf);width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:16px 16px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px));position:relative}
+@media(min-width:700px){.md{align-items:center}.sh{border-radius:16px}}
+.x{position:absolute;top:10px;right:12px;background:var(--sk);color:var(--bl);border:0;border-radius:99px;width:30px;height:30px;cursor:pointer}
+.f{display:grid;gap:10px;margin:10px 0}.rv{background:var(--sk);border-radius:10px;padding:8px 12px;margin:6px 0}.rv b{color:var(--bl)}
+.chat{display:grid;gap:6px;max-height:40vh;overflow:auto;margin:10px 0}.bb{max-width:80%;padding:8px 12px;border-radius:14px}.me{background:var(--bl);color:var(--on);justify-self:end}.them{background:var(--sk)}
+#t{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;background:var(--tx);color:var(--bg);padding:9px 16px;border-radius:99px;opacity:0;pointer-events:none;z-index:60;transition:opacity .2s}#t.on{opacity:1}
+</style></head><body>
+<header><div class="lg"><i>I</i>Mart</div><input id="q" type="search" placeholder="Search textbooks, tutoring, dorm finds" aria-label="Search listings"></header>
+<main id="v"></main><div id="m"></div><div id="t" role="status"></div>
+<nav><button data-a="nav" data-v="home"><span>🏠</span>Home</button><button data-a="nav" data-v="cats"><span>▦</span>Categories</button><button data-a="nav" data-v="cart"><span>🛒</span>Cart<b id="cc"></b></button><button data-a="nav" data-v="msgs"><span>💬</span>Messages</button><button data-a="nav" data-v="me"><span>👤</span>Profile</button></nav>
+<script>
+const $=s=>document.querySelector(s),e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),P=n=>'₱'+Number(n).toLocaleString();
+const CATS=[['Textbooks','📚'],['Dorm & home','🛋️'],['Gadgets','🎧'],['Fashion','👕'],['Food & snacks','🍪'],['Tutoring','🧑‍🏫'],['Tech help','🛠️'],['Print & design','🎨']];
+const R=['Hi! Yes, it’s still available.','Sure, we can meet near the library.','Thanks for asking! I can give a student discount.'];
+const sd=(id,type,title,price,cat,em,desc,by,mail,rv=[])=>({id,type,title,price,cat,em,desc,by,mail,rv});
+let S={user:null,wallet:1000,seq:100,cart:[],chats:{},items:[
+sd(1,'p','Calculus: Early Transcendentals, 8th ed.',450,'Textbooks','📚','Light highlighting, no torn pages. Meet on campus.','Mika R.','mika@up.edu.ph',[{by:'Jon',st:5,tx:'Exactly as described!'}]),
+sd(2,'p','USB mini desk fan, works great',180,'Dorm & home','🛋️','Quiet, two speeds. Perfect for hot dorm rooms.','Paolo D.','paolo@up.edu.ph'),
+sd(3,'p','Wired earphones, barely used',120,'Gadgets','🎧','Clear sound, with mic. Comes with a pouch.','Lea S.','lea@up.edu.ph'),
+sd(4,'p','Org shirt, size M, hand-me-down',150,'Fashion','👕','Washed twice, still crisp. Fits true to size.','Ken A.','ken@up.edu.ph'),
+sd(5,'p','Homemade polvoron, box of 12',95,'Food & snacks','🍪','Baked fresh every Friday. Order a day ahead.','Ana C.','ana@up.edu.ph'),
+sd(6,'s','Calculus and Physics tutoring',150,'Tutoring','🧑‍🏫','One hour, one-on-one, online or in the library. First 15 minutes free.','Mika R.','mika@up.edu.ph',[{by:'Ria',st:5,tx:'Explained limits so clearly.'}]),
+sd(7,'s','Laptop cleanup and Windows reinstall',250,'Tech help','🛠️','Virus removal, driver fixes and a speed-up. Same-day for most laptops.','Paolo D.','paolo@up.edu.ph'),
+sd(8,'s','Poster and slide deck design',200,'Print & design','🎨','Clean, readable layouts for class reports and org events.','Lea S.','lea@up.edu.ph')]};
+try{const r=localStorage.getItem('imart');if(r)S={...S,...JSON.parse(r)}}catch(_){}
+const st=()=>{try{localStorage.setItem('imart',JSON.stringify(S))}catch(_){}};
+let V='home',F={q:'',t:'all',c:'',sort:'new'},M=null;
+const item=i=>S.items.find(x=>x.id==i),stars=r=>r.length?'★ '+(r.reduce((a,x)=>a+x.st,0)/r.length).toFixed(1)+' ('+r.length+')':'New';
+const unit=i=>i.type=='s'?'<small>/session</small>':'';
+const card=i=>`<article class="cd" data-a="open" data-id="${i.id}" tabindex="0"><div class="tl">${i.em}${i.type=='s'?'<b class="bd">Service</b>':''}</div><div class="cb"><h3>${e(i.title)}</h3><div class="pr">${P(i.price)}${unit(i)}</div><div class="mt"><span>${e(i.by)}</span><span>${stars(i.rv)}</span></div></div></article>`;
+function toast(t){const x=$('#t');x.textContent=t;x.className='on';clearTimeout(toast.h);toast.h=setTimeout(()=>x.className='',2400)}
+function need(){if(S.user)return true;M={k:'auth'};draw();return false}
+const cl=()=>S.cart.map(item).filter(Boolean);
+function home(){const q=F.q.toLowerCase(),l=S.items.filter(i=>(F.t=='all'||i.type==F.t)&&(!F.c||i.cat==F.c)&&(!q||(i.title+i.desc+i.cat).toLowerCase().includes(q)));
+l.sort(F.sort=='lo'?(a,b)=>a.price-b.price:F.sort=='hi'?(a,b)=>b.price-a.price:(a,b)=>b.id-a.id);
+return `<section class="hero"><h1>Students selling to students.</h1><p>Textbooks, dorm finds, tutoring and tech help at student prices.</p><button class="b w" data-a="new">Post a listing</button></section><div class="row sc">${[['all','All'],['p','Products'],['s','Services']].map(([k,n])=>`<button class="ch${F.t==k?' on':''}" data-a="tab" data-t="${k}">${n}</button>`).join('')}${F.c?`<button class="ch on" data-a="clr">${e(F.c)} ✕</button>`:''}<select class="sel" data-ch="sort" aria-label="Sort"><option value="new"${F.sort=='new'?' selected':''}>Newest</option><option value="lo"${F.sort=='lo'?' selected':''}>Price: low to high</option><option value="hi"${F.sort=='hi'?' selected':''}>Price: high to low</option></select></div>${l.length?`<div class="grid">${l.map(card).join('')}</div>`:'<p class="mu">Nothing matches yet. Try another search, or post it yourself.</p>'}`}
+const cats=()=>`<h1>Categories</h1><div class="grid">${CATS.map((c,n)=>`<button class="cat" data-a="cat" data-c="${e(c[0])}"><span>${c[1]}</span><b>${e(c[0])}</b><small class="mu">${n>4?'Services':'Products'}</small></button>`).join('')}</div>`;
+function cart(){const l=cl(),t=l.reduce((a,x)=>a+x.price,0);return '<h1>Cart</h1>'+(l.length?l.map(i=>`<div class="rw"><span class="tl sm">${i.em}</span><div><b>${e(i.title)}</b><div class="mu">${e(i.by)}</div></div><b class="pr">${P(i.price)}</b><button class="b d" data-a="rm" data-id="${i.id}">Remove</button></div>`).join('')+`<div class="bx"><div class="rw2"><span>Total</span><b>${P(t)}</b></div><div class="rw2 mu"><span>Campus Wallet (simulated)</span><span>${P(S.wallet)}</span></div><button class="b" data-a="checkout">Pay with Campus Wallet</button><button class="b g" data-a="topup">Top up ₱500</button></div>`:'<p class="mu">Your cart is empty. Browse listings and add what you need.</p>')}
+function msgs(){const k=Object.keys(S.chats).map(item).filter(Boolean);return '<h1>Messages</h1>'+(k.length?k.map(i=>{const c=S.chats[i.id],l=c[c.length-1];return `<button class="rw th" data-a="chat" data-id="${i.id}"><span class="tl sm">${i.em}</span><div><b>${e(i.by)}</b><div class="mu">${e(l?l.t:'No messages yet')}</div></div></button>`}).join(''):'<p class="mu">No conversations yet. Open a listing and tap Message seller.</p>')}
+function me(){if(!S.user)return '<h1>Profile</h1><p class="mu">Sign in with your school email to buy, sell and chat.</p><button class="b" data-a="auth">Sign in</button>';const m=S.items.filter(x=>x.mail==S.user.mail);
+return `<h1>${e(S.user.name)}</h1><p class="mu">${e(S.user.mail)}</p><div class="bx"><div class="rw2"><span>Campus Wallet (simulated)</span><b>${P(S.wallet)}</b></div><button class="b g" data-a="topup">Top up ₱500</button></div><div class="rw2"><h2>My listings</h2><button class="b" data-a="new">New listing</button></div>`+(m.length?`<div class="grid">${m.map(card).join('')}</div>`:'<p class="mu">You haven’t posted anything yet. Sell a textbook or offer a skill.</p>')+'<p><button class="b d" data-a="out">Sign out</button></p>'}
+function modal(){const it=item(M.id);let h='';
+if(M.k=='auth')h='<h2>Sign in to IMart</h2><p class="mu">Use your school email (.edu) to buy, sell and chat.</p><div class="f"><input id="nm" placeholder="Your name"><input id="em" type="email" placeholder="you@school.edu.ph"><button class="b" data-a="sign">Sign in</button></div>';
+else if(M.k=='item'&&it){const own=S.user&&S.user.mail==it.mail;h=`<div class="tl big">${it.em}</div><h2>${e(it.title)}</h2><div class="pr">${P(it.price)}${unit(it)}</div><p class="mu">${it.type=='s'?'Service':'Product'} in ${e(it.cat)}, by ${e(it.by)}</p><p>${e(it.desc)}</p><div class="row">${own?`<button class="b g" data-a="edit" data-id="${it.id}">Edit</button><button class="b d" data-a="ask" data-id="${it.id}">Delete</button>`:`<button class="b" data-a="add" data-id="${it.id}">${it.type=='s'?'Book service':'Add to cart'}</button><button class="b g" data-a="chat" data-id="${it.id}">Message seller</button>`}</div><h3>Reviews ${stars(it.rv)}</h3>${it.rv.map(r=>`<p class="rv"><b>${'★'.repeat(r.st)}</b> ${e(r.tx)}<br><small class="mu">${e(r.by)}</small></p>`).join('')||'<p class="mu">No reviews yet.</p>'}${own?'':`<div class="f"><select id="st">${[5,4,3,2,1].map(n=>`<option value="${n}">${'★'.repeat(n)}</option>`).join('')}</select><input id="tx" placeholder="Write a short review"><button class="b g" data-a="rate" data-id="${it.id}">Post review</button></div>`}`}
+else if(M.k=='form'){const v=it||{type:'p',cat:CATS[0][0],price:'',title:'',desc:''};h=`<h2>${it?'Edit listing':'Post a listing'}</h2><div class="f"><select id="ty" aria-label="Type"><option value="p"${v.type=='p'?' selected':''}>Product</option><option value="s"${v.type=='s'?' selected':''}>Service</option></select><input id="ti" placeholder="Title" value="${e(v.title)}"><input id="pr" type="number" min="0" placeholder="Price in ₱" value="${v.price}"><select id="ct" aria-label="Category">${CATS.map(c=>`<option${c[0]==v.cat?' selected':''}>${e(c[0])}</option>`).join('')}</select><textarea id="ds" rows="3" placeholder="Condition, schedule, meet-up spot">${e(v.desc)}</textarea><button class="b" data-a="saveItem" data-id="${it?it.id:''}">${it?'Save changes':'Publish listing'}</button></div>`}
+else if(M.k=='ask'&&it)h=`<h2>Delete this listing?</h2><p class="mu">${e(it.title)} will be removed for everyone. This can’t be undone.</p><div class="row"><button class="b d" data-a="del" data-id="${it.id}">Delete listing</button><button class="b g" data-a="close">Keep it</button></div>`;
+else if(M.k=='chat'&&it){const c=S.chats[it.id]||[];h=`<h2>${e(it.by)}</h2><p class="mu">About ${e(it.title)}</p><div class="chat">${c.map(x=>`<div class="bb ${x.m}">${e(x.t)}</div>`).join('')||'<p class="mu">Say hi and ask about availability.</p>'}</div><div class="row"><input id="msg" placeholder="Type a message"><button class="b" data-a="send" data-id="${it.id}">Send</button></div>`}
+return `<div class="md" data-a="close"><div class="sh" data-a="stop"><button class="x" data-a="close" aria-label="Close">✕</button>${h}</div></div>`}
+function draw(){$('#v').innerHTML={home,cats,cart,msgs,me}[V]();$('#m').innerHTML=M?modal():'';document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==V));$('#cc').textContent=S.cart.length||''}
+const A={stop(){},nav(d){V=d.v;M=null;draw()},tab(d){F.t=d.t;draw()},cat(d){F.c=d.c;F.t='all';V='home';draw()},clr(){F.c='';draw()},auth(){M={k:'auth'};draw()},
+open(d){M={k:'item',id:+d.id};draw()},close(){M=null;draw()},add(d){if(!S.cart.includes(+d.id))S.cart.push(+d.id);st();M=null;draw();toast('Added to cart')},rm(d){S.cart=S.cart.filter(x=>x!=d.id);st();draw()},
+topup(){if(!need())return;S.wallet+=500;st();draw();toast('₱500 added to your Campus Wallet')},
+checkout(){if(!need())return;const l=cl(),t=l.reduce((a,x)=>a+x.price,0);if(!l.length)return;if(t>S.wallet)return toast('Not enough balance. Top up your Campus Wallet.');S.wallet-=t;S.cart=[];st();draw();toast('Paid '+P(t)+'. Sellers have been notified.')},
+sign(){const n=$('#nm').value.trim(),m=$('#em').value.trim().toLowerCase();if(!n)return toast('Enter your name.');if(!/^[^@\s]+@[^@\s]+\.edu(\.[a-z]{2})?$/.test(m))return toast('Use your school email ending in .edu.');S.user={name:n,mail:m};st();M=null;draw();toast('Welcome to IMart, '+n.split(' ')[0])},
+out(){S.user=null;st();draw()},new(){if(!need())return;M={k:'form'};draw()},edit(d){M={k:'form',id:+d.id};draw()},ask(d){M={k:'ask',id:+d.id};draw()},
+saveItem(d){if(!need())return;const g=i=>$('#'+i).value.trim(),o={type:g('ty'),title:g('ti'),price:+g('pr'),cat:g('ct'),desc:g('ds')};if(o.title.length<3||g('pr')===''||!(o.price>=0)||!o.desc)return toast('Add a title, price and description.');o.em=CATS.find(c=>c[0]==o.cat)[1];
+if(d.id){Object.assign(item(d.id),o);toast('Listing updated')}else{S.items.push({...o,id:++S.seq,by:S.user.name,mail:S.user.mail,rv:[]});toast('Listing published')}st();M=null;draw()},
+del(d){S.items=S.items.filter(x=>x.id!=d.id);S.cart=S.cart.filter(x=>x!=d.id);delete S.chats[d.id];st();M=null;draw();toast('Listing deleted')},
+chat(d){if(!need())return;S.chats[d.id]=S.chats[d.id]||[];M={k:'chat',id:+d.id};draw()},
+send(d){const t=$('#msg').value.trim();if(!t)return;const c=S.chats[d.id];c.push({m:'me',t});st();draw();$('#msg').focus();setTimeout(()=>{c.push({m:'them',t:R[Math.random()*R.length|0]});st();if(M&&M.k=='chat'&&M.id==d.id){draw();$('#msg').focus()}else if(V=='msgs'&&!M)draw()},1200)},
+rate(d){if(!need())return;const tx=$('#tx').value.trim();if(!tx)return toast('Write a short review first.');item(d.id).rv.push({by:S.user.name,st:+$('#st').value,tx});st();draw();toast('Review posted')}};
+document.addEventListener('click',x=>{const t=x.target.closest('[data-a]');if(t)A[t.dataset.a](t.dataset)});
+document.addEventListener('change',x=>{if(x.target.dataset.ch=='sort'){F.sort=x.target.value;draw()}});
+document.addEventListener('keydown',x=>{if(x.key=='Escape'&&M){M=null;draw()}else if(x.key=='Enter'&&x.target.id=='msg')A.send({id:M.id})});
+$('#q').oninput=x=>{F.q=x.target.value;V='home';M=null;draw()};draw();
+</script></body></html>
